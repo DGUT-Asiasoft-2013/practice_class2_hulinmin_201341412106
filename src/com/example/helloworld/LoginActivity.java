@@ -51,9 +51,9 @@ public class LoginActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		
-		fragAccount.setlabelText("账户名");
+		fragAccount.setLabelText("账户名");
 		fragAccount.setHintText("请输入账户名");
-		fragPassword.setlabelText("密码");
+		fragPassword.setLabelText("密码");
 		fragPassword.setHintText("请输入密码");
 		fragPassword.setIsPassword(true);
 	}

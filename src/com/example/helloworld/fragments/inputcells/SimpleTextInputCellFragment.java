@@ -15,23 +15,23 @@ public class SimpleTextInputCellFragment extends BaseInputCellFragment {
 
 	TextView label;
 	EditText edit;
-	@Override
+
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		
+
 		View view = inflater.inflate(R.layout.fragment_inputcell_simpletext, container);
 		label = (TextView) view.findViewById(R.id.label);
 		edit = (EditText) view.findViewById(R.id.edit);
 		return view;
 	}
-	
+
 	public void setLabelText(String labelText) {
 		label.setText(labelText);
 	}
-	
+
 	public void setHintText(String hintText) {
-		label.setHint(hintText);
+		edit.setHint(hintText);
 	}
-	
+
 	public void setIsPassword(boolean isPassword) {
 		// TODO Auto-generated method stub
 
@@ -42,11 +42,9 @@ public class SimpleTextInputCellFragment extends BaseInputCellFragment {
 		}
 	}
 
-	@Override
-	public void setlabelText(String labelText) {
-		// TODO Auto-generated method stub
-		
-	}
+
+
+
 
 }
 

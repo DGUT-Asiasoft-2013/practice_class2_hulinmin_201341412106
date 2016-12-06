@@ -40,7 +40,7 @@ public class PasswordRecoverStep1Fragment extends Fragment {
 		// TODO Auto-generated method stub
 		super.onResume();
 
-		fragEmail.setlabelText("×¢²áÓÊÏä");
+		fragEmail.setLabelText("×¢²áÓÊÏä");
 		fragEmail.setHintText("ÊäÈë×¢²áÓÊÏäµØÖ·");
 	}
 

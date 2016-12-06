@@ -114,9 +114,5 @@ public class PictureInputCellFragment extends BaseInputCellFragment {
 		this.hintText.setText(hintText);;
 	}
 
-	@Override
-	public void setlabelText(String labelText) {
-		// TODO Auto-generated method stub
 
-	}
 }
