@@ -42,6 +42,12 @@ public class SimpleTextInputCellFragment extends BaseInputCellFragment {
 		}
 	}
 
+	public String getText() {
+		return edit.getText().toString();
+	}
+
+
+
 
 
 
