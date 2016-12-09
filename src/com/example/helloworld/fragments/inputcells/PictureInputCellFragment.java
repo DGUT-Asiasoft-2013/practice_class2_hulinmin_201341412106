@@ -1,5 +1,7 @@
 package com.example.helloworld.fragments.inputcells;
 
+import java.io.ByteArrayOutputStream;
+
 import com.example.helloworld.R;
 
 import android.app.Activity;
@@ -8,6 +10,7 @@ import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -26,6 +29,8 @@ public class PictureInputCellFragment extends BaseInputCellFragment {
 	ImageView imageView;
 	TextView labelText;
 	TextView hintText;
+	
+	byte[] pngData;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -87,6 +92,12 @@ public class PictureInputCellFragment extends BaseInputCellFragment {
 		itnt.setType("image/*");
 		startActivityForResult(itnt,REQUESTCODE_ALBUM);
 	}
+	
+	void saveBitmap(Bitmap bmp){
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		bmp.compress(CompressFormat.PNG, 100,baos);
+		pngData = baos.toByteArray();
+	}
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -94,6 +105,8 @@ public class PictureInputCellFragment extends BaseInputCellFragment {
 
 		if(requestCode==REQUESTCODE_CAMERA){
 			Bitmap bmp = (Bitmap)data.getExtras().get("data");
+			saveBitmap(bmp);
+			
 			imageView.setImageBitmap(bmp);
 		}else if(requestCode ==REQUESTCODE_ALBUM ){
 			try{
@@ -112,6 +125,11 @@ public class PictureInputCellFragment extends BaseInputCellFragment {
 
 	public void setHintText(String hintText) {
 		this.hintText.setText(hintText);;
+	}
+	
+	public byte[] getPngData() {
+		// TODO Auto-generated method stub
+		return pngData;
 	}
 
 

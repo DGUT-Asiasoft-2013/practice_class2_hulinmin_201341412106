@@ -16,6 +16,8 @@ public class SimpleTextInputCellFragment extends BaseInputCellFragment {
 	TextView label;
 	EditText edit;
 
+
+
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 		View view = inflater.inflate(R.layout.fragment_inputcell_simpletext, container);
@@ -45,6 +47,10 @@ public class SimpleTextInputCellFragment extends BaseInputCellFragment {
 	public String getText() {
 		return edit.getText().toString();
 	}
+
+	
+
+
 
 
 
