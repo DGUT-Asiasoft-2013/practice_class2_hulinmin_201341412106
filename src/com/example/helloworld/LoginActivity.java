@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import java.io.IOException;
 
+import com.example.helloworld.api.Server;
 import com.example.helloworld.entity.User;
 import com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -95,7 +96,7 @@ public class LoginActivity extends Activity {
 
 
 
-		OkHttpClient client=new OkHttpClient();
+		OkHttpClient client=new Server().getShareClient();
 
 		MultipartBody.Builder requestBodyBuilder = new MultipartBody.Builder()
 				.setType(MultipartBody.FORM)
@@ -113,7 +114,7 @@ public class LoginActivity extends Activity {
 				.build();
 
 		final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
-		progressDialog.setMessage("ÇëÉÔºò");
+		progressDialog.setMessage("ÕýÔÚµÇÂ¼ÖÐ");
 		progressDialog.setCancelable(false);
 		progressDialog.setCanceledOnTouchOutside(false);
 
